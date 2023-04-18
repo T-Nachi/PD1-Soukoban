@@ -49,7 +49,7 @@ public class GameManegerScript : MonoBehaviour
     
     void Start()
     {
-        map = new int[] { 0, 0, 0, 1, 0, 2, 0, 0, 0 };
+        map = new int[] { 0, 2, 0, 1, 0, 2, 0, 0, 0 };
         PrintArray();
         string debugText = "";
 
@@ -71,15 +71,16 @@ public class GameManegerScript : MonoBehaviour
             
             MoveNumber(1, playerIndex, playerIndex + 1);
             PrintArray();
-            
-            
-
-         
            
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+            int playerIndex = GetPlayerIndex();
 
-      
+
+            MoveNumber(1, playerIndex, playerIndex - 1);
+            PrintArray();
+        }
     }
 
    
